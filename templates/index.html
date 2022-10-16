@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Login</title>
+        <title>Sign up</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signup.css')}}" />
     </head>
     <body>
-        <h2>Login below</h2>
+        <h1>Sign up below</h1>
+        <hr>
+        <br>
         <form method="post">
-            Email address:<input type="text" name="emailAddress"><br>
-            
-            Password:<input type="password" name="passWord"><br>
+            <span id="error"><h2>{{ errorMessage }}</h2></span>
+            <span id="error"><b>{{ invalidUsername }}</b></span>Username: <input type="text" name="userName" value="{{ userName }}"><br>
+            <span id="error"><b>{{ invalidEmail }}</b></span>Email address:<input type="text" name="emailAddress" value="{{ emailAddress }}"><br>
+            <span id="error"><b>{{ invalidPassword }}</b></span> Password:<input type="password" name="passWord"><br>
             <input type="submit">
         </form>
     </body>
