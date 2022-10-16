@@ -9,10 +9,16 @@
         <hr>
         <br>
         <form method="post">
+            {%if errorMessage %}
             <span id="error"><h2>{{ errorMessage }}</h2></span>
-            <span id="error"><b>{{ invalidUsername }}</b></span>Username: <input type="text" name="userName" value="{{ userName }}"><br>
-            <span id="error"><b>{{ invalidEmail }}</b></span>Email address:<input type="text" name="emailAddress" value="{{ emailAddress }}"><br>
+            <span id="error"><b>{{ invalidUsername }}</b></span> Username: <input type="text" name="userName" value="{{ userName }}"><br>
+            <span id="error"><b>{{ invalidEmail }}</b></span> Email address:<input type="text" name="emailAddress" value="{{ emailAddress }}"><br>
             <span id="error"><b>{{ invalidPassword }}</b></span> Password:<input type="password" name="passWord"><br>
+            {% else %}
+            Username: <input type="text" name="userName" value="{{ userName }}"><br>
+            Email address:<input type="text" name="emailAddress" value="{{ emailAddress }}"><br>
+            Password:<input type="password" name="passWord"><br>
+            {% endif %}
             <input type="submit">
         </form>
     </body>
